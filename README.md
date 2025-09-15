@@ -45,7 +45,17 @@ You must only close the file it is opened - do not close if opening the file fai
 - If it fails to read either the first line or the second line, return -1.
 - Return the length of the longest common substring between the first two lines. (NOTE: Do not count the next-line character.)
 
-For example a file like...
+- The "Common Substring" can be any sequence of characters that are included in both strings. It does not have to start from the beginning. 
+
+For example, 
+```plaintext
+Line 1: ABCDEFGHIJ123456789
+Line 2: ABDEFGHKLPM123456789
+```
+
+The common substrings are: AB, DEFGH, and 123456789. Therefore, the longest common substring would be 123456789, and the program must print 9 (since its length is 9).
+
+For another example a file like...
 ```plaintext
 first line: ABCDEFGHIJ
 second line: ABDEFGHKLPM
