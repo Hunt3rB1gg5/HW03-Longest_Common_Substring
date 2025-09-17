@@ -27,7 +27,7 @@ int longest_common(char* filename, char* first_line, char* second_line, int size
     // Step 2: Read two lines from the file
     //         Save the first line at first_line and second line at second_line
     //         Don't forget to handle the failures
-    if (fegets(first_line, size, file) == NULL)
+    if (fgets(first_line, size, file) == NULL)
     {
         fprintf(stderr, '\nFirst line failed');
         return(-1);
