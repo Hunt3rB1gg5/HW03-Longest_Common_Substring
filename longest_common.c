@@ -29,12 +29,12 @@ int longest_common(char* filename, char* first_line, char* second_line, int size
     //         Don't forget to handle the failures
     if (fgets(first_line, size, file) == NULL)
     {
-        fprintf(stderr, '\nFirst line failed');
+        fprintf(stderr, "\nFirst line failed");
         return(-1);
     }
     if (fgets(second_line, size, file) == NULL)
     {
-        fprintf(stderr, '\nSecond line failed');
+        fprintf(stderr, "\nSecond line failed");
         return(-1);
     }
     fclose(file);
