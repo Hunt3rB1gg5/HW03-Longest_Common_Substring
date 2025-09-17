@@ -18,13 +18,26 @@ int longest_common(char* filename, char* first_line, char* second_line, int size
 
     // Step 1: Open the file
     //         Don't forget to handle failures
-
+    FILE* file = fopen(filename, "r");
+    if (file == NULL)
+    {
+        return(-1);
+    }
 
     // Step 2: Read two lines from the file
     //         Save the first line at first_line and second line at second_line
     //         Don't forget to handle the failures
-
-
+    if (fegets(first_line, size, file) == NULL)
+    {
+        fprintf(stderr, '\nFirst line failed');
+        return(-1);
+    }
+    if (fgets(second_line, size, file) == NULL)
+    {
+        fprintf(stderr, '\nSecond line failed');
+        return(-1);
+    }
+    fclose(file);
     // Step 3: Remove each line's newline character
     first_line[strcspn(first_line, "\r\n")]  = '\0';
     second_line[strcspn(second_line, "\r\n")] = '\0';
