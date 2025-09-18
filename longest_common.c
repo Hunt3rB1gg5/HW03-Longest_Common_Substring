@@ -64,6 +64,7 @@ int longest_common(char* filename, char* first_line, char* second_line, int size
             {
                 max_length = i3;
             }
+            i3 = 0; //this should reset the counter
         }
     }
     
