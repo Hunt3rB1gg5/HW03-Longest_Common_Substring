@@ -44,9 +44,29 @@ int longest_common(char* filename, char* first_line, char* second_line, int size
 
     // Step 4: Find the longest common substring between the two strings
     //         Probably, you would have to loops (that are nested)
-    int max_length = 0;         // Maximum length of common substring that was found
-
-
+    int max_length = 0; 
+    int i;
+    i = 0;
+    int i2;
+    i2 = 0;
+    int i3;
+    i3 = 0;
+    // Maximum length of common substring that was found
+    for (i = 0; i < size; i++)
+    {
+        for (i2 = 0; i2 < size; i2++)
+        {
+            while (((i + i3) < size) && ((i2 + i3 < size)) && (first_line[i + i3] == second_line[i2+i3]))
+            {
+                i3++;
+            }
+            if (i3 > max_length)
+            {
+                max_length = i3;
+            }
+        }
+    }
+    
 
 
     // Step 5 :Return the maximum length of common substrings
