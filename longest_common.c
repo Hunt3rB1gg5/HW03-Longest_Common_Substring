@@ -56,7 +56,8 @@ int longest_common(char* filename, char* first_line, char* second_line, int size
     {
         for (i2 = 0; i2 < size; i2++)
         {
-            while (((i + i3) < size) && ((i2 + i3 < size)) && (first_line[i + i3] == second_line[i2+i3]))
+            i3 = 0; //this should reset the counter
+            while (first_line[i + i3] != '\0' && second_line[i2 + i3] != '\0' && first_line[i+i3] == second_line[i2+i3]) 
             {
                 i3++;
             }
@@ -64,7 +65,6 @@ int longest_common(char* filename, char* first_line, char* second_line, int size
             {
                 max_length = i3;
             }
-            i3 = 0; //this should reset the counter
         }
     }
     
